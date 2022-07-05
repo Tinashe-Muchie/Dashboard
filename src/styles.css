@@ -1,0 +1,760 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+
+:root {
+  box-sizing: border-box;
+  --background-blue: rgba(205, 209, 228);
+  --button-blue: rgba(72, 113, 247);
+  --left-sidebar-font: rgba(149, 165, 166);
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-blue);
+  font-family: "Rubik", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/*styles for sidebar wrapper */
+.sidebar_wrapper {
+  display: none;
+  position: relative;
+  margin: 0;
+  padding: 1em;
+  background-color: #fff;
+  min-height: 100vh;
+  color: var(--left-sidebar-font);
+  height: 100%;
+  box-shadow: 0 0 .8em black;
+}
+
+.sidebar_heading {
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--button-blue);
+}
+
+.sidebar_heading span:first-of-type {
+  margin-right: 0.1em;
+  font-size: 0.8em;
+}
+
+.sidebar_heading span:last-of-type {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.sidebar_management {
+  padding: 0.5em;
+}
+
+.sidebar_management h2 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.sidebar_management > ul {
+  font-size: 0.8rem;
+}
+
+.sidebar_wrapper .sidebar_tile {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-blue);
+  border: hidden;
+  border-radius: 0.4em;
+  min-height: 20vh;
+  color: black;
+  padding: 0.4em;
+}
+
+.sidebar_wrapper .sidebar_tile > span {
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-bottom: 0.4em;
+}
+
+.sidebar_wrapper .sidebar_tile div {
+  font-size: 0.9rem;
+  margin-bottom: 0.4em;
+  vertical-align: middle;
+  color: var(--button-blue);
+  font-weight: bold;
+}
+
+.sidebar_wrapper .sidebar_tile div > span:first-of-type {
+  font-size: 0.6rem;
+}
+
+.sidebar_wrapper .sidebar_tile button {
+  background-color: var(--button-blue);
+  color: ivory;
+  border: hidden;
+  padding: 0.5em;
+  border-radius: 0.2em;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0em 0.2em 0.2em rgba(82, 78, 183);
+  cursor: pointer;
+  transition: box-shadow 15s linear;
+}
+
+.sidebar_wrapper .sidebar_tile button:hover {
+  border-radius: 0.4em;
+  box-shadow: inset -0em -0.4em 0.2em rgba(82, 78, 183);
+}
+
+.sidebar_wrapper .sidebar_footer {
+  position: absolute;
+  bottom: 0.8em;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.6rem;
+}
+
+.sidebar_wrapper .sidebar_footer span:first-of-type {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: black;
+}
+
+.list_style {
+  padding-bottom: 0.5em;
+  vertical-align: middle;
+}
+
+.list_style > a {
+  text-decoration: none;
+  color: var(--left-sidebar-font);
+}
+
+.list_style > a:hover {
+  display: block;
+  color: var(--button-blue);
+}
+
+.list_style span:first-of-type {
+  font-size: 0.7rem;
+  margin-right: 0.5em;
+}
+
+.list_style span:last-of-type {
+  font-size: 0.9rem;
+}
+
+/*styles for search bar */
+.Search_bar_wrapper {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 .8em black;
+}
+
+.Search_bar_wrapper form {
+  display: flex;
+  padding: 0.2em;
+}
+
+.Search_bar_wrapper form > input {
+  padding: 0.2em;
+  font-size: 0.8rem;
+  border: 0.1em solid var(--left-sidebar-font);
+  border-bottom-left-radius: 5em;
+  border-top-left-radius: 5em;
+}
+
+.Search_bar_wrapper form > select {
+  border: 0.1em solid var(--left-sidebar-font);
+  border-bottom-right-radius: 5em;
+  border-top-right-radius: 5em;
+  padding: 0.2em;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.Search_bar_wrapper form > select > option {
+  color: var(--left-sidebar-font);
+}
+
+.Search_bar_wrapper > div {
+  display: flex;
+  align-items: center;
+}
+
+.Search_bar_wrapper > div .Search_bar_bell {
+  background-color: var(--background-blue);
+  border: hidden;
+  border-radius: 50%;
+  padding: 0.1em;
+  margin-right: 0.1em;
+  color: var(--button-blue);
+}
+
+.Search_bar_wrapper > div .Admin_info {
+  display: flex;
+  background-color: var(--background-blue);
+  padding: 0.2em;
+  border: hidden;
+  border-radius: 0.5em;
+  margin-right: 0.2em;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+.Search_bar_wrapper > div .Admin_info div:first-of-type {
+  background-color: var(--left-sidebar-font);
+  padding: 0.2em;
+  border: hidden;
+  border-radius: 50%;
+  margin-right: 0.2em;
+}
+
+.Search_bar_wrapper > div .Admin_info div:last-of-type {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+}
+
+.Search_bar_wrapper > div .Admin_info div:last-of-type span:first-of-type {
+  font-weight: bold;
+}
+
+.Search_bar_wrapper > div .Admin_info div:last-of-type span:last-of-type {
+  color: var(--left-sidebar-font);
+}
+
+/*styles for overview section*/
+.Overview_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.Overview_wrapper > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.Overview_wrapper > div span:first-of-type {
+  font-weight: bolder;
+  font-size: .9rem;
+}
+
+.Overview_wrapper > div span:last-of-type {
+  color: var(--left-sidebar-font);
+  font-size: .8rem;
+}
+
+.Overview_wrapper button {
+  padding: 0.5em 2em;
+  background-color: var(--button-blue);
+  border: hidden;
+  color: ivory;
+  box-shadow: 0em 0.4em 0.2em rgba(82, 78, 183);
+  border-radius: 0.3em;
+  font-size: 0.7rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.Overview_wrapper button:hover {
+  border-radius: 0.5em;
+  box-shadow: inset 0em -0.4em 0.5em 0.2em rgba(82, 78, 183);
+}
+
+/*staff info section styling*/
+.staff_info_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.staff_info_list {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 0.5em .5em;
+  border: hidden;
+  border-radius: 0.3em;
+  box-shadow: 0 0 .8em black;
+}
+
+.staff_info_list > span {
+  padding: 0.3em 0.5em;
+  border: hidden;
+  border-radius: 0.2em;
+  background-color: rgba(253, 227, 167);
+  color: rgba(235, 149, 50);
+}
+.staff_info_list:first-child > span {
+  background-color: rgba(200, 247, 197);
+  color: rgba(46, 204, 113);
+}
+
+.staff_info_list:last-child > span {
+  background-color: var(--background-blue);
+  color: rgba(44, 130, 201);
+}
+
+.staff_info_list > div {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+  padding: 0.4em;
+}
+
+.staff_info_list > div > span:last-of-type {
+  font-weight: bold;
+  padding-top: 0.5em;
+  font-size: 0.9rem;
+}
+
+/*styling for patient statistics section*/
+.patient_stats_wrapper {
+  background-color: #fff;
+  padding: 0.8em;
+  border: hidden;
+  border-radius: 0.5em;
+  margin-bottom: .5em;
+  box-shadow: 0 0 .8em black;
+}
+
+.patient_stats_wrapper > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.patient_stats_wrapper > div > span {
+  font-weight: bold;
+}
+
+.patient_stats_wrapper > div > div {
+  background-color: var(--background-blue);
+  padding: 0.5em;
+  border: hidden;
+  border-radius: 0.4em;
+}
+
+.patient_stats_wrapper > div > div > a {
+  text-decoration: none;
+  padding: 0.2em 0.8em;
+  margin: 0.1em;
+  border: hidden;
+  border-radius: 0.2em;
+  color: var(--left-sidebar-font);
+}
+
+.patient_stats_wrapper > div > div > a:hover,
+a:active {
+  background-color: #fff;
+  color: var(--button-blue);
+  font-weight: bold;
+}
+
+.patient_stats_wrapper .chart {
+  padding: 1.5em;
+}
+
+/*styling for patients section */
+.patients_wrapper {
+  background-color: #fff;
+  padding: 0.8em;
+  border: hidden;
+  border-radius: 0.5em;
+  font-size: 0.8rem;
+  box-shadow: 0 0 .8em black;
+  margin-bottom: .5em;
+}
+
+.patients_wrapper > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.patients_wrapper > div span:first-of-type {
+  font-weight: bold;
+}
+
+.patients_wrapper > div span:last-of-type {
+  border: 0.1em solid var(--left-sidebar-font);
+  padding: 0.2em;
+  border-radius: 0.3em;
+  color: var(--left-sidebar-font);
+}
+
+.patients_wrapper > div:last-of-type {
+  max-width: 20em;
+  padding: 1em;
+  margin-top: 1em;
+}
+
+/*styles for the information section*/
+.information_wrapper {
+  background-color: #fff;
+  font-size: 0.8rem;
+  border: hidden;
+  border-radius: 0.5em;
+  padding: 1.5em;
+  height: 100%;
+  box-shadow: 0 0 .8em black;
+  margin-bottom: .5em;
+}
+
+.information_wrapper div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.information_wrapper div:first-of-type span:first-of-type {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.information_wrapper div:first-of-type span:last-of-type {
+  border: 0.1em solid var(--left-sidebar-font);
+  border-radius: 0.3em;
+  color: var(--left-sidebar-font);
+}
+
+.information_wrapper .appointment_list {
+  margin-top: 1em;
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+
+.information_wrapper .tests_tile {
+  background-color: var(--background-blue);
+  margin: 1em 0em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5em;
+}
+
+.information_wrapper .tests_tile .tests_tile_content {
+  display: flex;
+  padding: 0.5em;
+  justify-content: flex-start;
+}
+
+.information_wrapper .tests_tile .tests_tile_content > div:last-child {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5em;
+  font-weight: bold;
+}
+
+.information_wrapper .tests_tile .tests_tile_content > div:last-child span {
+  color: var(--left-sidebar-font);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  margin: 0.1em;
+}
+
+.information_wrapper
+  .tests_tile
+  .tests_tile_content
+  > div:last-child
+  span:last-of-type {
+  font-size: 0.7rem;
+  border: hidden;
+  color: black;
+  text-transform: none;
+}
+
+.information_wrapper
+  .tests_tile
+  .tests_tile_content
+  > div:last-child
+  span:first-child {
+  font-size: 0.7rem;
+  color: black;
+  text-transform: none;
+}
+
+.information_wrapper .tests_tile .tests_tile_content > div:first-child {
+  color: var(--button-blue);
+  background-color: rgba(132, 140, 207);
+  padding: 0.5em;
+  font-size: 1.2rem;
+  border-radius: 0.3em;
+}
+
+.information_wrapper .tests_tile .tests_tile_content_arrow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.8em;
+}
+
+.information_wrapper .tests_tile .tests_tile_content_arrow div:last-child {
+  background-color: var(--button-blue);
+  font-size: 1.2rem;
+  padding: 0.3em 0.5em;
+  color: #fff;
+  border-bottom-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+}
+
+/*styles for the poly division section */
+.poly_division_wrapper {
+  background-color: #fff;
+  padding: 0.9em;
+  border-radius: 0.5em;
+  height: 100%;
+  box-shadow: 0 0 .8em black;
+  margin-bottom: .5em;
+}
+
+.poly_division_wrapper > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+.poly_division_wrapper > div:first-child > span:first-child {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.poly_division_wrapper > div:first-child > span:last-child {
+  border: 0.1em solid var(--left-sidebar-font);
+  border-radius: 0.3em;
+  color: var(--left-sidebar-font);
+}
+
+.poly_division_wrapper .polyclinic_content {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.5em 0em;
+  align-items: center;
+}
+
+.poly_division_wrapper .polyclinic_content > div:first-child {
+  padding: 0.5em;
+  margin: 0.1em 0;
+  border-radius: 0.3em;
+}
+.poly_division_wrapper .polyclinic_content .dental {
+  color: rgba(46, 204, 113);
+  background-color: rgba(200, 247, 197);
+}
+
+.poly_division_wrapper .polyclinic_content > div:last-child {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.2em;
+  font-size: 0.8rem;
+}
+
+.poly_division_wrapper .polyclinic_content > div:last-child > span:first-child {
+  font-weight: bold;
+}
+
+.poly_division_wrapper .polyclinic_content > div:last-child > span:last-child {
+  font-size: 0.7rem;
+  color: var(--left-sidebar-font);
+  margin-top: 0.4em;
+}
+
+.poly_division_wrapper .polyclinic_content .cardiac {
+  color: rgba(242, 38, 19);
+  background-color: rgba(255, 228, 228);
+}
+
+.poly_division_wrapper .polyclinic_content .radiology {
+  color: var(--button-blue);
+  background-color: var(--background-blue);
+}
+
+.poly_division_wrapper > input {
+  border: hidden;
+  border-radius: 0.4em;
+  padding: 1em 1.5em;
+  font-size: 0.6rem;
+  display: inline-block;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 1em;
+  color: rgba(53, 162, 235);
+  background-color: rgba(53, 162, 235, 0.1);
+  box-shadow: 0em 0.1em 0.1em rgba(53, 162, 235);
+  cursor: pointer;
+}
+
+.calendar_wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-blue);
+  margin-top: 0.5em;
+  border-radius: 0.5em;
+}
+
+.calendar_wrapper .date > ul {
+  display: flex;
+}
+
+.date_list {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2em 0.5em;
+  cursor: pointer;
+}
+
+.date_list .calendar_day {
+  margin-top: 0.5em;
+  border: hidden;
+  align-self: center;
+  padding: 0 0.2em;
+}
+
+.date_list_actual {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2em 0.5em;
+  font-weight: bold;
+  background-color: var(--button-blue);
+  border-radius: 0.4em;
+}
+
+.date_list_actual .calendar_day {
+  margin-top: 0.5em;
+  border: hidden;
+  align-self: center;
+  padding: 0 0.2em;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr;
+    grid-template-rows: repeat(5, auto);
+    grid-gap: 0.8em;
+  }
+
+  .left-sidebar {
+    grid-column: 1/2;
+    grid-row: 1/6;
+  }
+
+  .search-bar {
+    grid-column: 2/5;
+    grid-row: 1/2;
+  }
+
+  .overview {
+    grid-column: 2/5;
+    grid-row: 2/3;
+  }
+
+  .staff_info {
+    grid-column: 2/4;
+    grid-row: 3/4;
+  }
+
+  .patient_covid_stats {
+    grid-column: 2/4;
+    grid-row: 4/5;
+  }
+
+  .gender_patient {
+    grid-column: 2/3;
+    grid-row: 5/6;
+  }
+
+  .group_patient {
+    grid-column: 3/4;
+    grid-row: 5/6;
+  }
+
+  .informations {
+    grid-column: 4/5;
+    grid-row: 3/5;
+  }
+
+  .poly_division {
+    grid-column: 4/5;
+    grid-row: 5/6;
+  }
+
+  .sidebar_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Search_bar_wrapper form {
+    padding: 0.5em;
+  }
+
+  .Search_bar_wrapper form > in {
+    padding: 0.7em;
+    font-size: 0.9rem;
+    border-bottom-left-radius: 5em;
+    border-top-left-radius: 5em;
+  }
+
+  .Search_bar_wrapper form > select {
+    padding: 0.7em;
+  }
+
+  .Search_bar_wrapper > div .Admin_info {
+    margin-right: 0.6em;
+    padding: 0.5em;
+  }
+
+  .Search_bar_wrapper > div .Search_bar_bell {
+    padding: 0.4em;
+    margin-right: 0.4em;
+  }
+
+  .Overview_wrapper > div span:first-of-type {
+    font-size: 1rem;
+  }
+  
+  .Overview_wrapper > div span:last-of-type {
+    font-size: 1rem;
+  }
+
+  .Overview_wrapper button {
+    padding: 0.8em 2em;
+    font-size: 0.9rem;
+  }
+
+  .staff_info_list {
+    padding: 0.7em 2.5em;
+  }
+
+  .patient_stats_wrapper {
+    margin-bottom: 0em;
+  }
+
+  .information_wrapper {
+    margin-bottom: 0em;
+  }
+
+  .poly_division_wrapper {
+    margin-bottom: 0;
+  }
+}
+
